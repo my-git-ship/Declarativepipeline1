@@ -18,6 +18,12 @@ pipeline
             }
                 
         }
+	stage('contineousDeployment')
+	{
+	    steps
+	    {
+	      sh label: '', script: 'scp /var/lib/jenkins/workspace/demo-project/webapp/target/webapp.war    ubuntu@172.31.13.90:/var/lib/tomcat8/testwebapp.war'
+	    }
   
     }
     
